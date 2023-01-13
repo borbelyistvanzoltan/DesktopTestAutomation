@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@2.4.0
-
 workflows:
   tests:
     jobs:
@@ -10,9 +7,8 @@ workflows:
 
 jobs:
   ui-tests:
-    executor:
-      name: win/default
-      shell: powershell.exe
+    docker:
+      - image: mcr.microsoft.com/windows:ltsc2019
     steps:
       - checkout
       - run: choco install winappdriver
