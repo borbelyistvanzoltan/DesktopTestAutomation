@@ -1,5 +1,6 @@
 package com.windriver;
 
+import com.windriver.WinDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,7 +10,7 @@ import io.appium.java_client.windows.WindowsDriver;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class WinAppCalcDemo
+public class WinAppCalcDemoTest
 {
     WindowsDriver driver = null;
     public String appPath="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";

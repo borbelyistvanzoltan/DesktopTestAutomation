@@ -104,16 +104,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <properties> <property>
-                        <name>usedefaultlisteners</name>
-                        <value>false</value>
-                    </property>
+                    <properties>
+                        <property>
+                            <name>usedefaultlisteners</name>
+                            <value>false</value>
+                        </property>
                         <property>
                             <name>listener</name>
                             <value>org.uncommons.reportng.HTMLReporter,
                                 org.uncommons.reportng.JUnitXMLReporter
                             </value>
-                        </property> </properties>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
             <plugin>
