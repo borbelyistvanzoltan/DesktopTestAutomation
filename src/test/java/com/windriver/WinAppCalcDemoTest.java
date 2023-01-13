@@ -1,6 +1,9 @@
 package com.windriver;
 
 import com.windriver.WinDriver;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -50,6 +53,8 @@ public class WinAppCalcDemoTest
     }*/
 
     @Test(description="Demonstration of Button click", priority = 1)
+    @Description("Test calculating feature")
+    @Story("Button click interaction")
     public void button_click_interactions()
     {
 

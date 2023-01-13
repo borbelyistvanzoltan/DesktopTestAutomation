@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:
+  allure: ayte/allure@0.1.3
   win: circleci/windows@2.4.0
 
 workflows:
@@ -11,14 +12,15 @@ workflows:
 jobs:
   ui-tests:
     executor:
-      name: win/default
+      name: win/gpu-nvidia
       shell: powershell.exe
     steps:
+      - run: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; irm get.scoop.sh | iex
+      - run: scoop install allure
+      #- allure/install
       - checkout
       - run: choco install winappdriver
       - run: choco install maven
-      - run: choco install oldcalc
-      - run: cd C:\ProgramData\chocolatey\lib\oldcalc\tools ; ls
-      - run: explorer shell:AppsFolder\Old Calculator for Windows 10.exe
-      - run: get-appxpackage -allusers | Select Name, PackageFullName
+      #- run: Remove-item alias:curl
       - run: mvn test
+      - allure/report
