@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class WinAppCalcDemoTest
 {
     WindowsDriver driver = null;
-    public String appPath="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
+    public String appPath="C:\\ProgramData\\chocolatey\\lib\\oldcalc\\tools\\Old Calculator for Windows 10.exe";
 
     @BeforeTest
     public void testSetUp() throws Exception
