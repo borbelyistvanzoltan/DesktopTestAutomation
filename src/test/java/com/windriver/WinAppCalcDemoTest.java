@@ -8,13 +8,15 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import io.appium.java_client.windows.WindowsDriver;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 public class WinAppCalcDemoTest
 {
     WindowsDriver driver = null;
-    public String appPath="C:\\ProgramData\\chocolatey\\lib\\oldcalc\\tools\\Old Calculator for Windows 10.exe";
+    //public String appPath="C:\\ProgramData\\chocolatey\\lib\\oldcalc\\tools\\Old Calculator for Windows 10.exe";
     //public String appPath="C:\\Program Files\\OldClassicCalc\\calc1.exe";
+    public String appPath= Paths.get("OldClassicCalc/calc1.exe").toAbsolutePath().toString();
 
     @BeforeTest
     public void testSetUp() throws Exception
