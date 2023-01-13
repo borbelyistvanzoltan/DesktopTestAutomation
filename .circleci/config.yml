@@ -17,4 +17,8 @@ jobs:
       - checkout
       - run: choco install winappdriver
       - run: choco install maven
+      - run: choco install oldcalc
+      - run: cd C:\ProgramData\chocolatey\lib\oldcalc\tools ; ls
+      - run: explorer shell:AppsFolder\Old Calculator for Windows 10.exe
+      - run: get-appxpackage -allusers | Select Name, PackageFullName
       - run: mvn test
