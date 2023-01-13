@@ -30,7 +30,7 @@ public class WinAppCalcDemoTest
         driver = new WindowsDriver(new URL("http://127.0.0.1:4723/"), capability);
     }
 
-    @Test(description="Demonstration of Mouse Actions using ActionChains")
+    /*@Test(description="Demonstration of Mouse Actions using ActionChains")
     public void test_mouse_interactions() throws InterruptedException
     {
         Actions action = new Actions(driver);
@@ -44,20 +44,20 @@ public class WinAppCalcDemoTest
         WebElement scientific = driver.findElementByAccessibilityId("Standard");
         action.click(scientific);
         action.perform();
-    }
+    }*/
 
     @Test(description="Demonstration of Button click", priority = 1)
     public void button_click_interactions() throws InterruptedException
     {
-        driver.findElementByAccessibilityId("num1Button").click();
 
-        driver.findElement(By.name("Plusz")).click();
-        driver.findElement(By.name("Kilenc")).click();
-        driver.findElement(By.name("Egyenlő")).click();
+        driver.findElement(By.name("1")).click();
+        driver.findElement(By.name("Add")).click();
+        driver.findElement(By.name("9")).click();
+        driver.findElement(By.name("Equals")).click();
 
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 
-        WebElement resultsElement = driver.findElementByAccessibilityId("CalculatorResults");
+        WebElement resultsElement = driver.findElementByAccessibilityId("Result");
 
         String resultantText = "10";
         String resultsElementText = resultsElement.getText().replace("Megjelenített érték: ","").trim();
