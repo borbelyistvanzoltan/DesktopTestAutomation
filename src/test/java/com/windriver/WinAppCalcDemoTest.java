@@ -14,6 +14,7 @@ public class WinAppCalcDemoTest
 {
     WindowsDriver driver = null;
     public String appPath="C:\\ProgramData\\chocolatey\\lib\\oldcalc\\tools\\Old Calculator for Windows 10.exe";
+    //public String appPath="C:\\Program Files\\OldClassicCalc\\calc1.exe";
 
     @BeforeTest
     public void testSetUp() throws Exception
@@ -47,7 +48,7 @@ public class WinAppCalcDemoTest
     }*/
 
     @Test(description="Demonstration of Button click", priority = 1)
-    public void button_click_interactions() throws InterruptedException
+    public void button_click_interactions()
     {
 
         driver.findElement(By.name("1")).click();
@@ -57,7 +58,7 @@ public class WinAppCalcDemoTest
 
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 
-        WebElement resultsElement = driver.findElementByAccessibilityId("Result");
+        WebElement resultsElement = driver.findElement(By.name("Result"));
 
         String resultantText = "10";
         String resultsElementText = resultsElement.getText().replace("Megjelenített érték: ","").trim();
